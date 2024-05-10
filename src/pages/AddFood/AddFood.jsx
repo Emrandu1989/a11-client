@@ -1,7 +1,12 @@
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddFood = () => {
-      const handleAddFood = (e) =>{
+      const navigate = useNavigate()
+      const handleAddFood = async(e) =>{
            e.preventDefault();
            const form = e.target;
            const name = form.name.value;
@@ -13,6 +18,19 @@ const AddFood = () => {
            const additionNotes = form.additionNotes.value;
            const foodDetails = {name, photoUrl, foodQuantity, pickUpLocation, expiredDate,foodStatus,additionNotes}
            console.log(foodDetails)
+
+           try{
+             const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/foods`, foodDetails);
+             console.log(data)
+             if(data.insertedId){
+                toast.success('Food Details Added Successfully') 
+             }
+           
+             navigate('/')
+           }
+           catch(err){
+               console.log(err)
+           }
 
       }
     return (
@@ -79,6 +97,7 @@ const AddFood = () => {
           <button className="btn btn-primary">Add Food</button>
         </div>
       </form>
+      <ToastContainer />
         </>
     );
 };
