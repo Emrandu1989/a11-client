@@ -7,7 +7,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-    const {signIn, signInWithGoogle} = useContext(AuthContext);
+    const {signIn, signInWithGoogle,signInWithGitHub} = useContext(AuthContext);
     const navigate = useNavigate()
     const options = {
         animationData: groovyWalkAnimation,
@@ -53,7 +53,26 @@ const Login = () => {
  
        const handleGoogleLogin = () =>{
         signInWithGoogle()
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Google Login Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          navigate('/')
        }
+         const handleGitHubLogin = () =>{
+            signInWithGitHub()
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "GitHub Login Successfully",
+                showConfirmButton: false,
+                timer: 3500
+              });
+              navigate('/')
+         }
     return (
         <>
 
@@ -93,7 +112,7 @@ const Login = () => {
               <h2 className="font-bold text-3xl">Login with google and github</h2>
               <div className="space-x-5 my-2 flex justify-center items-center">
                    <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
-                   <button  className="btn btn-outline">GitHub</button>
+                   <button onClick={handleGitHubLogin}  className="btn btn-outline">GitHub</button>
               </div>
          </div>
 </div>
