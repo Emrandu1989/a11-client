@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
+
 
 
 const AddFood = () => {
@@ -23,7 +23,13 @@ const AddFood = () => {
              const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/foods`, foodDetails);
              console.log(data)
              if(data.insertedId){
-                toast.success('Food Details Added Successfully') 
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Food Data add Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
              }
            
              navigate('/')
@@ -97,7 +103,7 @@ const AddFood = () => {
           <button className="btn btn-primary">Add Food</button>
         </div>
       </form>
-      <ToastContainer />
+   
         </>
     );
 };
