@@ -4,7 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
+
 import AddFood from "../pages/AddFood/AddFood";
 import PrivateRoute from "./PrivateRoute";
 
@@ -31,10 +31,7 @@ const router = createBrowserRouter([
             path:'/addFood',
             element:<PrivateRoute> <AddFood /> </PrivateRoute>
           },
-          {
-            path:'/availableFood',
-            element:< AvailableFoods/>
-          },
+      
       ]
     },
   ]);

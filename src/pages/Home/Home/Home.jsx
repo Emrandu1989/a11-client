@@ -1,4 +1,5 @@
 import Banner from "../../../components/Banner/Banner";
+import FeaturedFood from "../../../components/FeaturedFood/FeaturedFood";
 
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <>
            
             <Banner/>
+            <FeaturedFood/>
            
         </>
     );
