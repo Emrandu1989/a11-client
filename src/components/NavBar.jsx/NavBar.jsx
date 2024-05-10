@@ -10,6 +10,8 @@ const NavBar = () => {
    }
       const navItems = <>
             <li className="mr-5"> <NavLink to='/'>Home</NavLink>  </li>
+            <li className="mr-5"> <NavLink to='/addFood'>Add  Food</NavLink>  </li>
+            <li className="mr-5"> <NavLink to='/availableFood'>Available Foods</NavLink>  </li>
               {
                 user ? <button className="bg-gray-600 px-3 rounded-xl text-white" onClick={handleLogOut}>LogOut</button> : <> 
                         <li> <NavLink to='/login'>Login</NavLink>  </li>
@@ -43,7 +45,12 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link className="btn">Button</Link>
+      {
+         user && <span className="font-bold">{user.email}</span>
+      }
+      {
+         user ?  <img title={user.displayName} className="rounded-xl w-[80px] ml-2" src={user.photoURL} alt="" /> : ""
+      }
   </div>
 </div> 
         </>

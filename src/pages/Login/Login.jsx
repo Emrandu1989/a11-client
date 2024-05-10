@@ -53,24 +53,12 @@ const Login = () => {
  
        const handleGoogleLogin = () =>{
         signInWithGoogle()
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Google Login Successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
+       
           navigate('/')
        }
          const handleGitHubLogin = () =>{
             signInWithGitHub()
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "GitHub Login Successfully",
-                showConfirmButton: false,
-                timer: 3500
-              });
+           
               navigate('/')
          }
     return (
