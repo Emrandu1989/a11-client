@@ -7,10 +7,11 @@ const AvailableFoods = () => {
       console.log(allFoods)
     return (
         <>   
-                    <h2 className="text-3xl font-bold text-center my-9">Available Foods : {allFoods.length} </h2>           
+                    <h2 className="text-3xl font-bold text-center my-9">Available Foods </h2>           
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                      {
-                        allFoods.map(food=> <FeaturedFoodCard
+                        allFoods.filter(f=>f.
+                            foodStatus==='available').map(food=> <FeaturedFoodCard
                         key={food._id}
                         food={food}
                         ></FeaturedFoodCard>  )

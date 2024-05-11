@@ -85,7 +85,7 @@ const AddFood = () => {
           <label className="label">
             <span className="label-text">Food Status</span>
           </label>
-          <input type="text" name="foodStatus" placeholder="Donator Image" defaultValue={'This food is very Tasty and  Delicious'} className="input input-bordered lg:w-[600px]" required />
+          <input type="text" name="foodStatus" placeholder="Donator Image" defaultValue={'available'} className="input input-bordered lg:w-[600px]" required />
       
         </div>
             </div>

@@ -8,6 +8,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddFood from "../pages/AddFood/AddFood";
 import PrivateRoute from "./PrivateRoute";
 import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
+import FoodDetails from "../components/FoodDetails/FoodDetails";
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
             path:'/availableFoods',
             element:<AvailableFoods />,
             loader:()=> fetch(`${import.meta.env.VITE_API_URL}/foods`)
+          },
+          {
+            path:'/details/:id',
+            element:<FoodDetails />,
+            loader:({params})=> fetch(`${import.meta.env.VITE_API_URL}/foods/${params.id}`)
           },
           {
             path:'/addFood',
