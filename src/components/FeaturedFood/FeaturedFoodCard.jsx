@@ -1,7 +1,7 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 
-const FeaturedFoodCard = ({ food }) => {
+const FeaturedFoodCard = ({ food}) => {
   console.log(food);
   const {
     additionNotes,
