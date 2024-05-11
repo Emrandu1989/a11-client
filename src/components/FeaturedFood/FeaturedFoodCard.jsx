@@ -14,7 +14,7 @@ const FeaturedFoodCard = ({ food }) => {
   } = food;
   return (
     <>
-      <div className="card  h-96 bg-base-100 shadow-xl">
+      <div className="card h-[800px]   bg-base-100 shadow-xl">
         <figure>
           <img className="w-full" src={photoUrl} alt="Shoes" />
         </figure>

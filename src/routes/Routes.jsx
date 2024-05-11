@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 import AddFood from "../pages/AddFood/AddFood";
 import PrivateRoute from "./PrivateRoute";
+import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
           {
             path:'/register',
             element:<Register />
+          },
+          {
+            path:'/availableFoods',
+            element:<AvailableFoods />,
+            loader:()=> fetch(`${import.meta.env.VITE_API_URL}/foods`)
           },
           {
             path:'/addFood',
