@@ -7,13 +7,13 @@ const FoodDetails = () => {
     const {user} = useContext(AuthContext)
       const foodDetails = useLoaderData();
       console.log(foodDetails)
-   const {photoUrl,name, foodQuantity,expiredDate,pickUpLocation} = foodDetails;
+   const {photoUrl,name, donatorName  ,foodQuantity,expiredDate,pickUpLocation} = foodDetails;
  
     return (
         <>
              <div className="text-center">
              <div className="my-5">
-                   <h2 className="text-3xl font-bold">Donar Name: {user.displayName} </h2>
+                   <h2 className="text-3xl font-bold">Donar Name: {donatorName} </h2>
                     <h4 className="text-lg mt-5 font-bold">PickUp Location: {pickUpLocation}</h4>
               </div>
 

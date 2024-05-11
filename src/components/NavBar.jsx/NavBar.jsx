@@ -12,6 +12,7 @@ const NavBar = () => {
             <li className="mr-5"> <NavLink to='/'>Home</NavLink>  </li>
             <li className="mr-5"> <NavLink to='/addFood'>Add  Food</NavLink>  </li>
             <li className="mr-5"> <NavLink to='/availableFoods'>Available Foods</NavLink>  </li>
+            <li className="mr-5"> <NavLink to='/manageMyFood'>MangeMyFood</NavLink>  </li>
               {
                 user ? <button className="bg-gray-600 px-3 rounded-xl text-white" onClick={handleLogOut}>LogOut</button> : <> 
                         <li> <NavLink to='/login'>Login</NavLink>  </li>
