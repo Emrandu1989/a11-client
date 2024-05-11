@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -49,6 +50,9 @@ const AddFood = () => {
       }
     return (
         <>
+              <Helmet>
+                      <title>AddFood </title>
+              </Helmet>
            
            <form onSubmit={handleAddFood} className="card-body">
 

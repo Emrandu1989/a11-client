@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ManageMyFoods = () => {
   const { user } = useContext(AuthContext);
@@ -20,7 +21,7 @@ const ManageMyFoods = () => {
   };
   console.log(food);
   const { foodQuantity, name, photoUrl, _id } = food;
-  
+
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -54,10 +55,11 @@ const ManageMyFoods = () => {
     });
   };
 
-  
-
   return (
     <>
+      <Helmet>
+        <title>ManageMyFood </title>
+      </Helmet>
       <div className="container mx-auto md:px-4    lg:px-8">
         <h1 className="text-3xl font-semibold text-gray-800 mb-8">
           My Foods ({food.length})
@@ -103,12 +105,17 @@ const ManageMyFoods = () => {
                   <td className="md:px-6 py-4  text-sm text-gray-700">
                     <Link>
                       {" "}
-                      <Link to={`/updateFood/${myFood._id}`}className="btn">Update</Link>{" "}
+                      <Link to={`/updateFood/${myFood._id}`} className="btn">
+                        Update
+                      </Link>{" "}
                     </Link>
                   </td>
 
                   <td className="md:px-6  py-4  m text-right text-sm font-medium">
-                    <button onClick={()=>handleDelete(myFood._id)} className="btn btn-square mr-12 btn-outline">
+                    <button
+                      onClick={() => handleDelete(myFood._id)}
+                      className="btn btn-square mr-12 btn-outline"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"

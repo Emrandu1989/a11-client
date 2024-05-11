@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import FeaturedFoodCard from "../../components/FeaturedFood/FeaturedFoodCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const AvailableFoods = () => {
@@ -9,6 +10,10 @@ const AvailableFoods = () => {
       const [availableFoods, setAvailableFoods] = useState(allFoods)
     return (
         <>   
+              <Helmet>
+                      <title>Available Foods </title>
+              </Helmet>
+
                     <h2 className="text-3xl font-bold text-center my-9">Available Foods </h2>           
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                      {
