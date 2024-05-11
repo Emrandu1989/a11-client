@@ -9,7 +9,7 @@ const ErrorPage = () => {
          
               <img className='h-[600px]'  src={img} alt="" />
                 <div>
-                     <Link to='/' className='btn btn-link'>Go Home</Link>
+                     <Link to='/' className='btn btn-link'>Back To Home</Link>
                 </div>
               </div>
         </>

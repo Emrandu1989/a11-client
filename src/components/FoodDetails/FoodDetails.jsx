@@ -1,9 +1,14 @@
 import { useContext, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const FoodDetails = () => {
-  const { user } = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
+     console.log(user.email)
+
+      const navigate = useNavigate()
   const [requestDate, setRequestDate] = useState(new Date() || new Date())
   const foodDetails = useLoaderData();
   console.log(foodDetails);
@@ -18,6 +23,47 @@ const FoodDetails = () => {
     additionNotes,
     _id
   } = foodDetails;
+
+
+
+  const handleRequestedFood = async(e) =>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photoUrl = form.photoUrl.value;
+    const id = form._id.value;
+   
+    const pickUpLocation = form.pickUpLocation.value;
+    const expiredDate = form.expiredDate.value;
+    const requestedDate = form.expiredDate.value;
+   
+    const additionNotes = form.additionNotes.value;
+    const donatorName = user.displayName;
+    const donatorImg = user.photoURL;
+    const donatorEmail = user.email;
+    const foodDetails = {name,id, photoUrl, requestedDate,pickUpLocation, expiredDate,additionNotes,donatorName,donatorEmail,donatorImg}
+    console.log(foodDetails)
+
+    try{
+      const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/requestedFoods`, foodDetails);
+      console.log(data)
+      if(data.insertedId){
+         Swal.fire({
+             position: "center",
+             icon: "success",
+             title: "Food Request add Successfully",
+             showConfirmButton: false,
+             timer: 1500
+           });
+      }
+    
+      navigate('/requestedFood')
+    }
+    catch(err){
+        console.log(err)
+    }
+
+}
 
   return (
     <>
@@ -62,7 +108,7 @@ const FoodDetails = () => {
 
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
           <div className="modal-box">
-            <form  className="card-body">
+            <form onSubmit={handleRequestedFood}  className="card-body">
               <div className="lg:flex flex-col justify-between items-center lg:px-12">
                 <div className="form-control">
                   <label className="label">
@@ -209,7 +255,7 @@ const FoodDetails = () => {
                   </label>
                   <input
                     type="text"
-                    name="expireDate"
+                    name="expiredDate"
                     placeholder="expireDate"
                     readOnly
                     defaultValue={expiredDate}
@@ -235,7 +281,7 @@ const FoodDetails = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Request</button>
+                <button  className="btn btn-primary">Request</button>
               </div>
             </form>
 
