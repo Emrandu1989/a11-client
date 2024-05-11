@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ManageMyFoods = () => {
   const { user } = useContext(AuthContext);
@@ -19,6 +20,40 @@ const ManageMyFoods = () => {
   };
   console.log(food);
   const { foodQuantity, name, photoUrl, _id } = food;
+  
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`${import.meta.env.VITE_API_URL}/food/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Product has been deleted.",
+                icon: "success",
+              });
+              const remaining = food.filter((product) => product._id !== _id);
+              setFood(remaining);
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting product:", error);
+          });
+      }
+    });
+  };
+
   
 
   return (
@@ -71,8 +106,9 @@ const ManageMyFoods = () => {
                       <Link to={`/updateFood/${myFood._id}`}className="btn">Update</Link>{" "}
                     </Link>
                   </td>
+
                   <td className="md:px-6  py-4  m text-right text-sm font-medium">
-                    <button className="btn btn-square mr-12 btn-outline">
+                    <button onClick={()=>handleDelete(myFood._id)} className="btn btn-square mr-12 btn-outline">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"

@@ -45,6 +45,8 @@ const UpdatePage = () => {
         }
 
    }
+
+   
     return (
         <div>
               <h2>This is Update</h2>
