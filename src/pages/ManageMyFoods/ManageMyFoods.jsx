@@ -19,6 +19,7 @@ const ManageMyFoods = () => {
   };
   console.log(food);
   const { foodQuantity, name, photoUrl, _id } = food;
+  
 
   return (
     <>
@@ -67,7 +68,7 @@ const ManageMyFoods = () => {
                   <td className="md:px-6 py-4  text-sm text-gray-700">
                     <Link>
                       {" "}
-                      <button className="btn">Update</button>{" "}
+                      <Link to={`/updateFood/${myFood._id}`}className="btn">Update</Link>{" "}
                     </Link>
                   </td>
                   <td className="md:px-6  py-4  m text-right text-sm font-medium">
