@@ -1,10 +1,15 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 
 const AddFood = () => {
+    const {user} = useContext(AuthContext);
+     console.log(user.email)
+
       const navigate = useNavigate()
       const handleAddFood = async(e) =>{
            e.preventDefault();
@@ -16,7 +21,10 @@ const AddFood = () => {
            const expiredDate = form.expiredDate.value;
            const foodStatus = form.foodStatus.value;
            const additionNotes = form.additionNotes.value;
-           const foodDetails = {name, photoUrl, foodQuantity, pickUpLocation, expiredDate,foodStatus,additionNotes}
+           const donatorName = user.displayName;
+           const donatorImg = user.photoURL;
+           const donatorEmail = user.email;
+           const foodDetails = {name, photoUrl, foodQuantity, pickUpLocation, expiredDate,foodStatus,additionNotes,donatorName,donatorEmail,donatorImg}
            console.log(foodDetails)
 
            try{
