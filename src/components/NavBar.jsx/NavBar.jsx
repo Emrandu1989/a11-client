@@ -13,6 +13,7 @@ const NavBar = () => {
             <li className="mr-5"> <NavLink to='/addFood'>Add  Food</NavLink>  </li>
             <li className="mr-5"> <NavLink to='/availableFoods'>Available Foods</NavLink>  </li>
             <li className="mr-5"> <NavLink to='/manageMyFood'>MangeMyFood</NavLink>  </li>
+            <li className="mr-5"> <NavLink to='/requestedFood'>MyRequestFood</NavLink>  </li>
               {
                 user ? <button className="bg-gray-600 px-3 rounded-xl text-white" onClick={handleLogOut}>LogOut</button> : <> 
                         <li> <NavLink to='/login'>Login</NavLink>  </li>
@@ -36,9 +37,10 @@ const NavBar = () => {
               {navItems}
       </ul>
     </div>
-    <Link className=" bg-green-100 rounded-xl flex justify-center items-center p-2 text-xl">
-        <img className="w-[80px] rounded-full" src={logo} alt="" />
-        Epicurean Arena</Link>
+    <Link className=" bg-green-100 p-2 pr-8 rounded-xl flex justify-center items-center lg:p-2 text-xl">
+        <img className="w-[80px] ml-5 rounded-full" src={logo} alt="" />
+         <span className="ml-6">Epicurean Arena</span>
+         </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

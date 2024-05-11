@@ -61,21 +61,21 @@ const ManageMyFoods = () => {
         <title> Epicurean Arena | ManageMyFood </title>
       </Helmet>
       <div className="container mx-auto md:px-4    lg:px-8">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-8">
+        <h1 className="text-3xl lg:font-semibold text-gray-800 mb-8">
           My Foods ({food.length})
         </h1>
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
+          <table className="lg:min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr className="">
-                <th className="md:px-6  py-3 text-left text-sm font-semibold text-gray-700 uppercase">
+                <th className="md:px-6 px-2 py-3 text-left text-sm lg:font-semibold text-gray-700 uppercase">
                   Image
                 </th>
-                <th className="md:px-6 py-3 text-left text-sm  text-gray-700 uppercase ">
+                <th className="md:px-6  py-3 text-left text-sm  text-gray-700 uppercase ">
                   Food Name
                 </th>
 
-                <th className="md:px-6 py-3 text-left text-sm font-semibold text-gray-700 uppercase">
+                <th className="md:px-6 py-3 text-left text-sm lg:font-semibold text-gray-700 uppercase">
                   Update
                 </th>
                 <th className="md:px-6  py-3">Delete</th>
@@ -105,16 +105,16 @@ const ManageMyFoods = () => {
                   <td className="md:px-6 py-4  text-sm text-gray-700">
                     <Link>
                       {" "}
-                      <Link to={`/updateFood/${myFood._id}`} className="btn">
+                      <Link to={`/updateFood/${myFood._id}`} className="btn mr-5">
                         Update
                       </Link>{" "}
                     </Link>
                   </td>
 
-                  <td className="md:px-6  py-4  m text-right text-sm font-medium">
+                  <td className="md:px-6  py-4  text-right text-sm font-medium">
                     <button
                       onClick={() => handleDelete(myFood._id)}
-                      className="btn btn-square mr-12 btn-outline"
+                      className="btn btn-square mr-2 lg:mr-12 btn-outline"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
