@@ -1,14 +1,17 @@
 import { useLottie } from "lottie-react";
 import groovyWalkAnimation from "./../../assets/Animation - 1715313922697.json";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {signIn, signInWithGoogle,signInWithGitHub} = useContext(AuthContext);
     const navigate = useNavigate()
+ 
+    const location = useLocation()
     const options = {
         animationData: groovyWalkAnimation,
         loop: true
@@ -36,7 +39,9 @@ const Login = () => {
               showConfirmButton: false,
               timer: 1500
             });
-            navigate('/')
+            setTimeout(()=>{
+              navigate(location?.state ? location.state : '/')
+          }, 2000)
 
         })
         .catch(error=>{
@@ -54,16 +59,22 @@ const Login = () => {
        const handleGoogleLogin = () =>{
         signInWithGoogle()
        
-          navigate('/')
+        setTimeout(()=>{
+          navigate(location?.state ? location.state : '/')
+      }, 2000)
        }
          const handleGitHubLogin = () =>{
             signInWithGitHub()
            
-              navigate('/')
+            setTimeout(()=>{
+              navigate(location?.state ? location.state : '/')
+          }, 2000)
          }
     return (
         <>
-
+             <Helmet>
+        <title> Epicurean Arena | Login </title>
+      </Helmet>
 
              <div className="hero min-h-screen bg-base-200 flex flex-col">
   <div className="hero-content flex-col lg:flex-row-reverse">

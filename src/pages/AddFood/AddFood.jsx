@@ -51,7 +51,7 @@ const AddFood = () => {
     return (
         <>
               <Helmet>
-                      <title>AddFood </title>
+                      <title> Epicurean Arena |  AddFood </title>
               </Helmet>
            
            <form onSubmit={handleAddFood} className="card-body">

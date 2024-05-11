@@ -11,7 +11,7 @@ const AvailableFoods = () => {
     return (
         <>   
               <Helmet>
-                      <title>Available Foods </title>
+                      <title> Epicurean Arena | Available Foods </title>
               </Helmet>
 
                     <h2 className="text-3xl font-bold text-center my-9">Available Foods </h2>           

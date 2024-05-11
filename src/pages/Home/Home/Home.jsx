@@ -6,8 +6,8 @@ import FeaturedFood from "../../../components/FeaturedFood/FeaturedFood";
 const Home = () => {
     return (
         <>
-           <Helmet>
-                <title>Home</title>
+           <Helmet >
+                <title>Epicurean Arena | Home</title>
            </Helmet>
             <Banner/>
             <FeaturedFood/>

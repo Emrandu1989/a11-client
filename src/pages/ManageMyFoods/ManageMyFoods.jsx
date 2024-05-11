@@ -58,7 +58,7 @@ const ManageMyFoods = () => {
   return (
     <>
       <Helmet>
-        <title>ManageMyFood </title>
+        <title> Epicurean Arena | ManageMyFood </title>
       </Helmet>
       <div className="container mx-auto md:px-4    lg:px-8">
         <h1 className="text-3xl font-semibold text-gray-800 mb-8">
