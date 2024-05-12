@@ -36,9 +36,9 @@ const FeaturedFoodCard = ({ food}) => {
           <p>PickUp Location: {pickUpLocation} </p>
           <p>Status: {foodStatus} </p>
           <p>Notes: {additionNotes} </p>
-            <div className="flex gap-5 my-5">
+            <div className="flex justify-left items-center text-center gap-5 my-5">
                   <img className="rounded-full w-12" src={donatorImg} alt="" />
-                 <h2>DonatorName:{donatorName}</h2>
+                 <h2>DonatorName: <strong className="text-red-500">{donatorName}</strong> </h2>
             </div>
           <div className="card-actions justify-center">
             <div className="badge badge-outline">Products</div>

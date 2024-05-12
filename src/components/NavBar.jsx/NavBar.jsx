@@ -52,7 +52,7 @@ const NavBar = () => {
          user && <span className="font-bold">{user.email}</span>
       } */}
       {
-         user ?  <img title={user.displayName} className="rounded-xl w-[80px] ml-2" src={user.photoURL} alt="" /> : ""
+         user ?  <img title={user.displayName} className="rounded-xl w-[80px] ml-2" src={user?.photoURL} alt="" /> : ""
       }
   </div>
 </div> 

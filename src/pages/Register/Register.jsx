@@ -7,6 +7,7 @@ import { FaEyeSlash } from "react-icons/fa6";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -45,6 +46,12 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+
+        updateProfile(loggedUser, {
+          displayName: name,
+          photoURL: photoUrl,
+        });
+
         Swal.fire({
           position: "top-end",
           icon: "success",

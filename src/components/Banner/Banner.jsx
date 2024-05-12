@@ -17,6 +17,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import bgimg2 from '../../assets/2.avif';
 import bgimg3 from '../../assets/3.avif';
 import bgimg4 from '../../assets/4.avif';
+import bgimg5 from '../../assets/restaurant-interior_1.avif';
 import Slide from './slide';
 
 
@@ -53,6 +54,12 @@ export default function Carousel() {
         <SwiperSlide>
 
             <Slide image={bgimg4}
+             text='Come to Our Resturent and Eat comfortably'
+            />
+        </SwiperSlide>
+        <SwiperSlide>
+
+            <Slide image={bgimg5}
              text='Come to Our Resturent and Eat comfortably'
             />
         </SwiperSlide>
