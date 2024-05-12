@@ -14,7 +14,7 @@ const PopularFood = () => {
         <>
              <div className="text-center uppercase space-y-5">
                   <p className="text-orange-400 font-semibold">------- Have a look our popular food --------</p>
-                  <h3 className="font-bold text-4xl text-gray-400">You should try to taste our <br /> most popular recipe. </h3>
+                  <h3 className="font-bold text-4xl text-gray-400">You should try to taste our <br /> most popular items. </h3>
              </div>
              <div className='flex justify-between px-36'>
              <div className="card w-96 bg-base-100 ">

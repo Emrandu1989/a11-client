@@ -14,7 +14,9 @@ const FeaturedFood = () => {
   }, []);
   return (
     <>
+                 <h1 className="text-center uppercase font-semibold text-orange-400 italic  text-3xl my-9">Please Have a Look to Our Featured Foods</h1>
       <div className="flex justify-center">
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {foods.map((food) => (
             <FeaturedFoodCard key={food._id} food={food}></FeaturedFoodCard>
