@@ -41,7 +41,7 @@ const FeaturedFoodCard = ({ food}) => {
                  <h2>DonatorName: <strong className="text-red-500">{donatorName}</strong> </h2>
             </div>
           <div className="card-actions justify-center">
-            <div className="badge badge-outline">Products</div>
+          
             <Link to={`/details/${_id}`} className="badge badge-outline">View Details</Link>
           </div>
         </div>

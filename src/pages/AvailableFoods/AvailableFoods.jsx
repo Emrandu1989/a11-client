@@ -2,12 +2,15 @@ import { useLoaderData } from "react-router-dom";
 import FeaturedFoodCard from "../../components/FeaturedFood/FeaturedFoodCard";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { RiLayoutRightFill } from "react-icons/ri";
+import { LuLayout } from "react-icons/lu";
 
 const AvailableFoods = () => {
   const allFoods = useLoaderData();
   const [availableFoods, setAvailableFoods] = useState(allFoods);
   const [searchQuery, setSearchQuery] = useState("");
   const [error, setError] = useState("");
+  const [clickCount, setClickCount] = useState(0);
 
   const handleSearch = () => {
     const filteredFoods = allFoods.filter((food) =>
@@ -27,6 +30,10 @@ const AvailableFoods = () => {
     setError("");
   };
 
+  const handleToggle = () => {
+    setClickCount((prevCount) => prevCount + 1);
+  };
+
   return (
     <>
       <Helmet>
@@ -35,6 +42,13 @@ const AvailableFoods = () => {
 
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center my-9">Available Foods</h2>
+
+        <div className="flex justify-end">
+          <button onClick={handleToggle} className="btn">
+            {clickCount % 2 === 0 ? <RiLayoutRightFill /> : <LuLayout />}
+          </button>
+        </div>
+
         <div className="flex justify-center mb-4">
           <input
             type="text"
@@ -51,7 +65,11 @@ const AvailableFoods = () => {
           </button>
         </div>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          className={`grid ${
+            clickCount % 2 === 0 ? "grid-cols-2" : "grid-cols-3"
+          } gap-5`}
+        >
           {availableFoods.length > 0 ? (
             availableFoods.map((food) => (
               <FeaturedFoodCard
