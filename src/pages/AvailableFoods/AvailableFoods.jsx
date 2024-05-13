@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { RiLayoutRightFill } from "react-icons/ri";
 import { LuLayout } from "react-icons/lu";
+import { motion } from "framer-motion";
 
 const AvailableFoods = () => {
   const allFoods = useLoaderData();
@@ -65,10 +66,13 @@ const AvailableFoods = () => {
           </button>
         </div>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-        <div
+        <motion.div
           className={`grid ${
             clickCount % 2 === 0 ? "grid-cols-2" : "grid-cols-3"
           } gap-5`}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
           {availableFoods.length > 0 ? (
             availableFoods.map((food) => (
@@ -81,7 +85,7 @@ const AvailableFoods = () => {
           ) : (
             <p className="text-center text-gray-600">No Food available.</p>
           )}
-        </div>
+        </motion.div>
       </div>
     </>
   );
