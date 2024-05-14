@@ -21,7 +21,7 @@ const PopularFood = () => {
     <>
       <div className="text-center uppercase space-y-5">
         <p className="text-orange-400 font-semibold">
-          ------- Have a look our popular food --------
+          --- Have a look our popular food ---
         </p>
         <h3 className="font-bold text-4xl text-gray-400">
           You should try to taste our <br />
@@ -47,14 +47,14 @@ const PopularFood = () => {
           </span>
         </h3>
       </div>
-      <div className="flex justify-between px-36">
-        <div className="card w-96 bg-base-100 ">
+      <div className="flex justify-between flex-col md:flex-row lg:px-36">
+        <div className="card px-2  bg-base-100 ">
           <figure className="px-10 relative pt-10">
             <img src={popular1} alt="Shoes" className="rounded-xl mr-16" />
             <img
               src={popular2}
               alt="Shoes"
-              className="rounded-xl absolute w-48 h-48 -right-8 -bottom-12 "
+              className="rounded-xl absolute w-42 h-36  lg:w-48 lg:h-48  -right-8 -bottom-12 "
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -65,18 +65,18 @@ const PopularFood = () => {
             </div>
           </div>
         </div>
-        <div className="card w-96 ml-20 bg-base-100 ">
+        <div className="card  px-2 lg:ml-20 bg-base-100 ">
           <figure className="px-10 relative pt-10">
             <img src={popular3} alt="Shoes" className="rounded-xl mr-3" />
             <img
               src={popular4}
               alt="Shoes"
-              className="rounded-xl absolute w-48 h-48 -right-8 -bottom-12 "
+              className="rounded-xl absolute w-36 h-36  lg:w-48 lg:h-48  -right-8 -bottom-12 "
             />
             <img
               src={popular5}
               alt="Shoes"
-              className="rounded-xl absolute w-48 h-48 -left-12 -bottom-12 "
+              className="rounded-xl absolute w-36 h-36  lg:w-48 lg:h-48  -left-12 -bottom-12 "
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -93,18 +93,18 @@ const PopularFood = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <div className="card w-96  bg-base-100 ">
+        <div className="card px-2 w-96  bg-base-100 ">
           <figure className="px-10 relative pt-10">
             <img src={popular6} alt="Shoes" className="rounded-xl mr-3" />
             <img
               src={popular7}
               alt="Shoes"
-              className="rounded-xl absolute w-48 h-48 -right-8 -bottom-12 "
+              className="rounded-xl absolute w-36 h-36 lg:w-48 lg:h-48 -right-8 -bottom-12 "
             />
             <img
               src={popular8}
               alt="Shoes"
-              className="rounded-xl absolute w-48 h-48 -left-12 -bottom-12 "
+              className="rounded-xl absolute w-36 h-36  lg:w-48 lg:h-48 -left-12 -bottom-12 "
             />
           </figure>
           <div className="card-body items-center text-center">

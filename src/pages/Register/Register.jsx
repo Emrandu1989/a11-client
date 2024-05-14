@@ -79,16 +79,16 @@ const Register = () => {
       </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left w-1/2 lg:ml-24 mt-24 ">
+          <div className="text-center lg:text-left lg:w-1/2 lg:ml-24 mt-24 ">
             <span className="font-bold text-3xl text-gray-400">
               Your presence cause our{" "}
-              <span className="ml-12"> glad be with Us.</span>{" "}
+              <span className="lg:ml-12"> glad be with Us.</span>{" "}
             </span>{" "}
             <span>{View}</span>
           </div>
-          <div className="card shrink-0 w-1/2  shadow-2xl bg-base-100">
+          <div className="card shrink-0 lg:w-1/2  shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">
-              <h1 className="text-center font-bold text-4xl text-gray-400">
+              <h1 className="text-center font-bold text-3xl lg:text-4xl text-gray-400">
                 Please SignUp
               </h1>
               <div className="form-control">

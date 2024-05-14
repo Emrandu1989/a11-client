@@ -78,18 +78,18 @@ const Login = () => {
 
              <div className="hero min-h-screen bg-base-200 flex flex-col">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="text-center lg:text-left w-1/2 lg:ml-24  mb-12">
+    <div className="text-center lg:text-left lg:w-1/2 lg:ml-24  mb-12">
           
-         <span className="font-bold text-6xl text-gray-400">welcome</span> <span>{View}</span>
+         <span className="font-bold text-4xl lg:text-6xl text-gray-400">welcome</span> <span>{View}</span>
     </div>
-    <div className="card shrink-0 w-1/2  shadow-2xl bg-base-100">
-      <form onSubmit={handleLogin} className="card-body">
+    <div className="card shrink-0 lg:w-1/2  shadow-2xl bg-base-100">
+      <form onSubmit={handleLogin} className="card-body ">
          <h1 className="text-center font-bold text-4xl text-gray-400">Please Login</h1>
-        <div className="form-control">
+        <div className="form-control ">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" name="email" placeholder="email" className="input  input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -104,7 +104,7 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
-      <p className="text-center my-2">New to this site Please <Link to='/register' className="btn-link">Register</Link> </p>
+      <p className="text-center mb-5 lg:my-2">New to this site Please <Link to='/register' className="btn-link">Register</Link> </p>
     </div>
   </div>
          <div>

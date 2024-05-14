@@ -14,21 +14,23 @@ const NavBar = () => {
             <li className="mr-5"> <NavLink to='/availableFoods'>Available Foods</NavLink>  </li>
             <li className="mr-5"> <NavLink to='/manageMyFood'>MangeMyFood</NavLink>  </li>
             <li className="mr-5"> <NavLink to='/requestedFood'>MyRequestFood</NavLink>  </li>
-              {
-                user ? <button className="bg-gray-600 px-3 rounded-xl text-white" onClick={handleLogOut}>LogOut</button> : <> 
-                        <li> <NavLink to='/login'>Login</NavLink>  </li>
-                     <li> <NavLink to='/register'>Register</NavLink>  </li>
-                </>
-              }
+
+            {
+  user ? <button className="bg-gray-600 px-3 rounded-xl btn  text-white" onClick={handleLogOut}>LogOut</button> : <div className="flex"> 
+          <li> <NavLink  to='/login'> <button className="">Login</button>  </NavLink>  </li>
+       <li> <NavLink to='/register'> <button className="">Register</button>  </NavLink>  </li>
+  </div>
+}             
           
       </>
+
 
 
     return (
         <>
            <div className="navbar ">
   <div className="navbar-start">
-    <div className="dropdown">
+    <div className="dropdown z-10">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
@@ -37,12 +39,12 @@ const NavBar = () => {
               {navItems}
       </ul>
     </div>
-    <Link className=" bg-green-100 p-2 pr-8 rounded-xl flex justify-center items-center lg:p-2 text-xl">
+    <Link className=" bg-green-100 p-2 pr-12 lg:pr-24 ml-12 lg:ml-0  rounded-xl flex justify-center items-center lg:p-2 text-xl">
         <img className="w-[80px] ml-5 rounded-full" src={logo} alt="" />
          <span className="ml-6">Epicurean Arena</span>
          </Link>
   </div>
-  <div className="navbar-center hidden lg:flex">
+  <div className="navbar-center hidden ml-12 lg:flex">
     <ul className="menu menu-horizontal px-1">
        {navItems}
     </ul>
