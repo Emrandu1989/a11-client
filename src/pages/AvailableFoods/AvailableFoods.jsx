@@ -44,13 +44,13 @@ const AvailableFoods = () => {
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center my-9">Available Foods</h2>
 
-        <div className="flex justify-end">
+        <div className="hidden lg:flex justify-end">
           <button onClick={handleToggle} className="btn">
             {clickCount % 2 === 0 ? <RiLayoutRightFill /> : <LuLayout />}
           </button>
         </div>
 
-        <div className="flex justify-center mb-4">
+        <div className="flex items-center  justify-center mb-4">
           <input
             type="text"
             placeholder="Search by food name..."
@@ -68,7 +68,7 @@ const AvailableFoods = () => {
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <motion.div
           className={`grid ${
-            clickCount % 2 === 0 ? "grid-cols-2" : "grid-cols-3"
+            clickCount % 2 === 0 ? "grid-cols-1 lg:grid-cols-2 " : "lg:grid-cols-3 grid-col-1"
           } gap-5`}
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}

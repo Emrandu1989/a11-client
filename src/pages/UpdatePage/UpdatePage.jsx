@@ -49,7 +49,7 @@ const UpdatePage = () => {
    
     return (
         <div>
-              <h2>This is Update</h2>
+             
               <form onSubmit={updateFoodInfo} className="card-body">
 
 <div className="lg:flex justify-between items-center lg:px-12">
