@@ -21,7 +21,7 @@ const RequestedFood = () => {
     console.log(requestedFoods);
     return (
         <>
-             <h2>This is My request food page</h2>
+            
 
              <div>
                   {

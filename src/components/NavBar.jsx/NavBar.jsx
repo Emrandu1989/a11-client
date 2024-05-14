@@ -39,9 +39,9 @@ const NavBar = () => {
               {navItems}
       </ul>
     </div>
-    <Link className=" bg-green-100 p-2 pr-12 lg:pr-24 ml-12 lg:ml-0  rounded-xl flex justify-center items-center lg:p-2 text-xl">
+    <Link className=" bg-green-100 p-2 pr-12 lg:pr-24 ml-4 lg:ml-0  rounded-xl flex justify-center items-center lg:p-2 text-xl">
         <img className="w-[80px] ml-5 rounded-full" src={logo} alt="" />
-         <span className="ml-6">Epicurean Arena</span>
+         <span className="ml-2">Epicurean Arena</span>
          </Link>
   </div>
   <div className="navbar-center hidden ml-12 lg:flex">
