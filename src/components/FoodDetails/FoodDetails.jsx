@@ -3,11 +3,15 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAvailableFood from "../../hooks/useAvailableFood";
 
 const FoodDetails = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [requestDate, setRequestDate] = useState('');
+
+   const [availableFoods, setAvailableFoods] = useAvailableFood();
+   console.log(availableFoods)
 
   useEffect(() => {
     const currentDate = new Date();
@@ -60,6 +64,8 @@ const FoodDetails = () => {
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/requestedFoods`, foodDetails);
       if (data.insertedId) {
+          const filteredFood = availableFoods.filter(f=> f._id !==_id);
+          setAvailableFoods(filteredFood)
         Swal.fire({
           position: "center",
           icon: "success",

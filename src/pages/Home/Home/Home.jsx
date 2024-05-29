@@ -3,6 +3,7 @@ import Banner from "../../../components/Banner/Banner";
 import FeaturedFood from "../../../components/FeaturedFood/FeaturedFood";
 import PopularFood from "../../../components/PopularFoodSection/PopularFood";
 import Reservation from "../../../components/Reservation/Reservation";
+import Faq from "../../../components/FaqSection/Faq";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner/>
             <PopularFood/>
             <FeaturedFood/>
+            <Faq/>
             <Reservation/>
            
         </>

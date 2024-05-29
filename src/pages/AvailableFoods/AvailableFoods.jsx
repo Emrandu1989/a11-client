@@ -5,16 +5,23 @@ import { Helmet } from "react-helmet-async";
 import { RiLayoutRightFill } from "react-icons/ri";
 import { LuLayout } from "react-icons/lu";
 import { motion } from "framer-motion";
+import useAvailableFood from "../../hooks/useAvailableFood";
+
 
 const AvailableFoods = () => {
-  const allFoods = useLoaderData();
-  const [availableFoods, setAvailableFoods] = useState(allFoods);
+   const [availableFoods, setAvailableFoods] = useAvailableFood();
+   console.log(availableFoods)
+  // const allFoods = useLoaderData();
+  // const [availableFoods, setAvailableFoods] = useState(allFoods);
   const [searchQuery, setSearchQuery] = useState("");
   const [error, setError] = useState("");
   const [clickCount, setClickCount] = useState(0);
+  const [sort, setSort] =  useState('')
 
   const handleSearch = () => {
-    const filteredFoods = allFoods.filter((food) =>
+      
+     
+    const filteredFoods = availableFoods.filter((food) =>
       food.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     if (filteredFoods.length === 0) {
@@ -64,6 +71,18 @@ const AvailableFoods = () => {
           <button onClick={handleReset} className="btn btn-secondary ml-2">
             Reset
           </button>
+        </div>
+        <div>
+           <select
+           onChange={e => {
+              setSort(e.target.value)
+           }}
+           value={sort}
+           name="sort" id="sort" className="border p-4 rounded-md">
+               <option value="">Sort By Deadline</option>
+               <option value="dsc">Descending Order</option>
+               <option value="asc">Ascending Order</option>
+           </select>
         </div>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <motion.div
