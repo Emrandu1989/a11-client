@@ -1,7 +1,8 @@
 
 # Epicurean Arena
 
-Machine World is an employee management system designed to monitor workloads, keep records of salaries and contracts, and more. Employees can post workflow updates, while HR Executives manage workflows and handle payments.
+Epicurean Arena is a community-driven platform aimed at reducing food waste and fostering food sharing among individuals. Our platform provides a seamless experience for users to donate surplus food, request food donations, and manage their food contributions.
+
 
 ## Live Site
 
